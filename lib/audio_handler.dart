@@ -7,8 +7,10 @@ class AudioHandler {
   AudioHandler(this.url);
 
   Future<void> play() async {
-    await _audioPlayer.play(DeviceFileSource(url));
+    await _audioPlayer.play(AssetSource(url));
   }
+
+  AudioPlayer get audioPlayer => _audioPlayer;
 
   Future<void> pause() async {
     await _audioPlayer.pause();
